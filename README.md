@@ -9,6 +9,10 @@ JavaScript's `setInterval` works in a synchronous manner which is non-ideal for 
 
 If a callback of `setDelayedInterval` returns a `Promise`, the interval timer is delayed by the execution of that promise.
 
+![Delayable setInterval timing example](example.jpg)
+
+The timer, if not presented with asynchronous results from callbacks, will execute at expected intervals. Upon receiving a promise the starting of the next interval timer will be delayed as shown above.
+
 ## Usage
 
 Usage is much the same as `setInterval`:
