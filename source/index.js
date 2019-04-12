@@ -1,13 +1,12 @@
 const __intervals = {};
 
-function clearDelayedInterval() {
-    const interval = __intervals[id];
-    if (!interval) {
+function clearDelayedInterval(intervalID) {
+    if (!intervalID || !__intervals[intervalID]) {
         return;
     }
-    clearTimeout(interval.timer);
-    interval.timer = null;
-    delete __intervals[id];
+    clearTimeout(__intervals[intervalID].timer);
+    __intervals[intervalID].timer = null;
+    delete __intervals[intervalID];
 }
 
 function generateID() {
@@ -44,6 +43,7 @@ function restartTimer(id) {
                 taskComplete,
                 taskComplete
             );
+            return;
         }
         interval.timer = null;
         restartTimer(id);
