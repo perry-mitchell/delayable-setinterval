@@ -2,7 +2,7 @@
   "name": "delayable-setinterval",
   "version": "1.0.0",
   "description": "An asynchronous setInterval that can be delayed using promises",
-  "main": "source/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "npm run clean && tsc",
     "clean": "rimraf dist",

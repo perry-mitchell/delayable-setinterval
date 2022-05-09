@@ -1,6 +1,6 @@
 # Delayable-SetInterval Changelog
 
-## v1.0.0
+## v1.0.1
 _2022-05-09_
 
  * Typescript
