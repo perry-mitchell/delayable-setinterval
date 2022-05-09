@@ -1,6 +1,6 @@
 {
   "name": "delayable-setinterval",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An asynchronous setInterval that can be delayed using promises",
   "main": "dist/index.js",
   "scripts": {
