@@ -1,6 +1,16 @@
-const __intervals = {};
+interface DelayedInterval {
+    delay: number;
+    fn: DelayedIntervalCallback;
+    timer: ReturnType<typeof setTimeout>;
+}
 
-function clearDelayedInterval(intervalID) {
+export type DelayedIntervalCallback = (...args: Array<any>) => any;
+
+export type DelayedIntervalID = string;
+
+const __intervals: Record<DelayedIntervalID, DelayedInterval> = {};
+
+export function clearDelayedInterval(intervalID: DelayedIntervalID): void {
     if (!intervalID || !__intervals[intervalID]) {
         return;
     }
@@ -9,11 +19,11 @@ function clearDelayedInterval(intervalID) {
     delete __intervals[intervalID];
 }
 
-function generateID() {
+function generateID(): DelayedIntervalID {
     return `${Date.now()}:${Math.floor(Math.random() * 1000000)}`;
 }
 
-function restartTimer(id) {
+function restartTimer(id: DelayedIntervalID) {
     const interval = __intervals[id];
     if (!interval) {
         throw new Error(`No interval found for ID: ${id}`);
@@ -50,7 +60,7 @@ function restartTimer(id) {
     }, interval.delay);
 }
 
-function setDelayedInterval(fn, delay) {
+export function setDelayedInterval(fn: DelayedIntervalCallback, delay: number): DelayedIntervalID {
     const id = generateID();
     __intervals[id] = {
         delay,
@@ -60,8 +70,3 @@ function setDelayedInterval(fn, delay) {
     restartTimer(id);
     return id;
 }
-
-module.exports = {
-    clearDelayedInterval,
-    setDelayedInterval
-};

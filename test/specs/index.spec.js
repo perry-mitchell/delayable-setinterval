@@ -1,5 +1,5 @@
 const sleep = require("sleep-promise");
-const { clearDelayedInterval, setDelayedInterval: _setDelayedInterval } = require("../../source/index.js");
+const { clearDelayedInterval, setDelayedInterval: _setDelayedInterval } = require("../../dist/index.js");
 
 describe("setDelayedInterval", function() {
     let setDelayedInterval;
