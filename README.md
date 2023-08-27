@@ -1,7 +1,7 @@
 # Delayable setInterval
 > An asynchronous setInterval that can be delayed using promises
 
-[![Build Status](https://travis-ci.org/perry-mitchell/delayable-setinterval.svg?branch=master)](https://travis-ci.org/perry-mitchell/delayable-setinterval)
+![build status](https://github.com/perry-mitchell/delayable-setinterval/actions/workflows/test.yml/badge.svg)
 
 ## About
 
