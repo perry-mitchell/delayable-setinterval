@@ -29,3 +29,7 @@ clearDelayedInterval(interval);
 ```
 
 The example above uses an `async` method to perform some asynchronous tasks. The method is fired every `1000`ms, but is delayed between initialisations of the timer by the time it takes to complete the async callback.
+
+## Support
+
+This library supports NodeJS 12+.
